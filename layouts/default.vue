@@ -1,8 +1,12 @@
+<script lang="ts">
+import Header from "~/components/Header.vue";
+import Footer from "~/components/Header.vue";
+</script>
 <template>
   <div>
+    <Header />
     <h2>Defaultのレイアウト</h2>
-    <NuxtLink v-bind:to="{ name: 'index' }">Home</NuxtLink>
-    <NuxtLink v-bind:to="{ name: 'page1' }">Page1</NuxtLink>
     <slot />
+    <Footer />
   </div>
 </template>

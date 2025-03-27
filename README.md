@@ -1,79 +1,44 @@
-# Nuxt Minimal Starter
+## fishing-nuxt-front
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+fishing を Nuxt.js で作成したフロントリポジトリです。
 
-## Setup
+## 環境
 
-Make sure to install dependencies:
+- フレームワーク：Nuxt.js 3.16.1
+- ライブラリ：Vue.js 3.5.13
+- 言語：TypeScript 5.8.2
+- 非同期ライブラリ：axios 1.8.4
+- Form ライブラリ：VeeValidate
+- バリデーションライブラリ：zod
+- 状態管理ライブラリ：Pinia
+- UI ライブラリ：NuxtUi 3.0.1
+- UI ライブラリ：tailwindcss 4.0.17
+- アイコン：NuxtIcon 1.11.0
 
-```bash
-# npm
-npm install
+## 環境構築
 
-# pnpm
-pnpm install
+下記の流れに従って、環境構築を行なってください。
 
-# yarn
-yarn install
+#### clone
 
-# bun
-bun install
+```
+git clone git@github.com:NarumiNaito/fishing-nuxt-front.git
 ```
 
-## Development Server
+#### build
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+```
+docker compose build
 ```
 
-## Production
+#### コンテナ作成
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+```
+docker compose up -d
 ```
 
-Locally preview production build:
+#### コンテナへの接続
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-# fishing-nuxt-app
-# fishing-nuxt-app
-# fishing-nuxt-app
-# fishing-nuxt-front
+docker compose exec nuxt /bin/sh
+```
