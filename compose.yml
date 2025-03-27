@@ -1,0 +1,13 @@
+services:
+  nuxt:
+    container_name: nuxt-node
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+    volumes:
+      - .:/usr/app
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    command: npm run dev
