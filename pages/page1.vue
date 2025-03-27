@@ -1,3 +1,8 @@
 <template>
-  <h2>Page1</h2>
+  <h1>Page1</h1>
 </template>
+<style scoped>
+h1 {
+  color: red;
+}
+</style>
