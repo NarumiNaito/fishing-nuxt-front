@@ -1,5 +1,5 @@
 <template>
-  <UContainer>
+  <UContainer class="bg-teal-100">
     <nav class="flex items-center justify-between py-4">
       <div class="flex items-center space-x-4">
         <UIcon name="i-heroicons-home" class="w-8 h-8 text-primary" />

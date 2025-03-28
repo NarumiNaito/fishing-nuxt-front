@@ -1,12 +1,10 @@
-<script lang="ts">
-import Header from "~/components/Header.vue";
-import Footer from "~/components/Header.vue";
-</script>
+<script lang="ts"></script>
 <template>
   <div>
     <Header />
-    <h2>Defaultのレイアウト</h2>
-    <slot />
+    <div class="bg-gray-100">
+      <slot />
+    </div>
     <Footer />
   </div>
 </template>
