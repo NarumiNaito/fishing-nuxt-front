@@ -5,10 +5,10 @@ useHead({
 </script>
 <template>
   <div>
-    <UApp>
+    <v-app>
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
-    </UApp>
+    </v-app>
   </div>
 </template>

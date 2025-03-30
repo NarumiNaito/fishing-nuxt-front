@@ -5,7 +5,8 @@ export default defineNuxtConfig({
 
   modules: ["@nuxt/content", "@nuxt/eslint", "@nuxt/fonts", "@nuxt/icon", "@nuxt/image", "@nuxt/scripts", "@nuxt/test-utils"],
   css: [
-    "vuetify/styles", // Vuetifyのスタイルをインポート
+    "vuetify/styles", // Vuetify のスタイルを追加
+    "@mdi/font/css/materialdesignicons.css", // MDI アイコンを追加
   ],
   build: {
     transpile: ["vuetify"],
