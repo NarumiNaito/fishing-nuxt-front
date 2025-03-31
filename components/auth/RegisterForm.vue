@@ -3,12 +3,27 @@ import { useForm } from "vee-validate";
 import Input from "../Input.vue";
 import { RegisterSchema } from "@/composable/schema/schema";
 
+const { $axios } = useNuxtApp();
+console.log($axios);
 const { handleSubmit } = useForm({
   validationSchema: RegisterSchema,
 });
 
-const onSubmit = handleSubmit((values) => {
-  console.log(values);
+const onSubmit = handleSubmit(async (data) => {
+  const requestUser = {
+    name: data.name,
+    email: data.email,
+    password: data.formPassword.password,
+  };
+  try {
+    await $axios.get("sanctum/csrf-cookie");
+
+    await $axios.post("api/register", requestUser);
+
+    navigateTo("/dashboard");
+  } catch (error: any) {
+    console.log(error);
+  }
 });
 </script>
 
