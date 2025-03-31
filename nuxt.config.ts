@@ -9,12 +9,12 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/content", "@nuxt/eslint", "@nuxt/fonts", "@nuxt/icon", "@nuxt/image", "@nuxt/scripts", "@nuxt/test-utils"],
+  modules: ["@nuxt/content", "@nuxt/eslint", "@nuxt/fonts", "@nuxt/icon", "@nuxt/image", "@nuxt/scripts", "@pinia/nuxt", "@nuxt/test-utils"],
   css: ["vuetify/styles", "@mdi/font/css/materialdesignicons.css"],
   build: {
     transpile: ["vuetify"],
   },
-  plugins: [{ src: "~/plugins/vuetify.ts" }],
+  plugins: [{ src: "~/plugins/vuetify.ts" }, { src: "~/plugins/pinia.ts" }],
   content: {
     watch: { enabled: false },
   },

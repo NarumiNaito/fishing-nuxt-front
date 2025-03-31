@@ -2,7 +2,7 @@ import * as z from "zod";
 import { toTypedSchema } from "@vee-validate/zod";
 import { errorMessage } from "./errorMessage";
 
-export const LoginSchema = toTypedSchema(
+export const useLoginSchema = toTypedSchema(
   z.object({
     email: z
       .string({
@@ -20,7 +20,7 @@ export const LoginSchema = toTypedSchema(
   })
 );
 
-export const RegisterSchema = toTypedSchema(
+export const useRegisterSchema = toTypedSchema(
   z.object({
     name: z
       .string({
