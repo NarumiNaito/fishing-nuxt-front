@@ -4,7 +4,7 @@ import Input from "../Input.vue";
 import { RegisterSchema } from "@/composable/schema/schema";
 
 const { $axios } = useNuxtApp();
-console.log($axios);
+
 const { handleSubmit } = useForm({
   validationSchema: RegisterSchema,
 });
