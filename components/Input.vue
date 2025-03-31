@@ -2,12 +2,12 @@
 import { Field } from "vee-validate";
 import ErrorMessage from "./ErrorMessage.vue";
 import "../assets/Input.scss";
-import { RegisterSchema } from "../composable/schema/schema";
-import { LoginSchema } from "../composable/schema/schema";
+import { useRegisterSchema } from "../composable/schema/useFormSchema";
+import { useLoginSchema } from "../composable/schema/useFormSchema";
 
 interface Props {
   name: string;
-  schema: typeof RegisterSchema | typeof LoginSchema;
+  schema: typeof useRegisterSchema | typeof useLoginSchema;
 }
 defineProps<Props>();
 </script>

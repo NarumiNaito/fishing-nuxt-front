@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useForm } from "vee-validate";
 import Input from "../Input.vue";
-import { RegisterSchema } from "@/composable/schema/schema";
+import { useRegisterSchema } from "@/composable/schema/useFormSchema";
 
 const { $axios } = useNuxtApp();
-
+const authStore = useAuthStore();
 const { handleSubmit } = useForm({
-  validationSchema: RegisterSchema,
+  validationSchema: useRegisterSchema,
 });
 
 const onSubmit = handleSubmit(async (data) => {
@@ -20,6 +20,9 @@ const onSubmit = handleSubmit(async (data) => {
 
     await $axios.post("api/register", requestUser);
 
+    const { name, email } = requestUser;
+    authStore.setUser({ name, email });
+
     navigateTo("/dashboard");
   } catch (error: any) {
     console.log(error);
@@ -30,13 +33,13 @@ const onSubmit = handleSubmit(async (data) => {
 <template>
   <form @submit.prevent="onSubmit">
     <h2>お名前</h2>
-    <Input name="name" :schema="RegisterSchema" />
+    <Input name="name" :schema="useRegisterSchema" />
     <h2>メールアドレス</h2>
-    <Input name="email" :schema="RegisterSchema" />
+    <Input name="email" :schema="useRegisterSchema" />
     <h2>パスワード</h2>
-    <Input name="formPassword.password" :schema="RegisterSchema" />
+    <Input name="formPassword.password" :schema="useRegisterSchema" />
     <h2>パスワード（確認）</h2>
-    <Input name="formPassword.passwordConfirm" :schema="RegisterSchema" />
+    <Input name="formPassword.passwordConfirm" :schema="useRegisterSchema" />
     <button class="button">送信</button>
   </form>
 </template>
