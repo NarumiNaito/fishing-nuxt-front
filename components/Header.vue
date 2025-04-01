@@ -8,7 +8,7 @@ const isLogin = authStore.isLogin;
 const isLogout = authStore.logout;
 
 const handleLogout = async () => {
-  const confirmLogout = window.confirm("本当にログアウトしますか？");
+  const confirmLogout = window.confirm("本当にログアウトしますの？");
 
   if (confirmLogout) {
     try {
